@@ -26,7 +26,7 @@ public class Deliverer extends MyThread {
 			} catch (InterruptedException e) {
 				//Wirft wenn Thread kaputt geht, irgendwie manchmal auch wenn voll, sollte aber i.d.R. warten
 			}
-			printMessage(count+"");
+			printMessage("put " + count);
 			count++;
 			try {
 				Thread.sleep(10);

@@ -22,7 +22,7 @@ public class Consumer extends MyThread {
 		while (number % 5 !=0) {
 			try {
 				number = bq.take();
-				printMessage(number+"");
+				printMessage("took "+number);
 			} catch (InterruptedException e) {
 				//Wirft wenn Thread probleme hat
 			}

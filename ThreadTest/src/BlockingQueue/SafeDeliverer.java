@@ -19,11 +19,11 @@ public class SafeDeliverer extends MyThread {
 
 	@Override
 	public void run() {
-		System.out.println("Deliverer started.");
+		printMessage("started");
 		while (true) {
-			bq.offer(count);
-			//wenn bq nicht voll, count hinzufügen
-			printMessage("offered " + count);
+			boolean passed = bq.offer(count);
+			// wenn bq nicht voll, count hinzufügen
+			printMessage("offered " + count + "  |  passed: " + passed);
 			count++;
 			if (count > 5) {
 				return;

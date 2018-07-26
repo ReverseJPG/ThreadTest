@@ -23,7 +23,7 @@ public class SafeConsumer extends MyThread {
 			number = bq.poll();
 			//Wenn bq leer, dann number = null und wird nicht blockiert
 			if (number != null) {
-				printMessage(number + "");
+				printMessage("polled "+number);
 				return;
 				//damit nicht ewig läuft
 			}

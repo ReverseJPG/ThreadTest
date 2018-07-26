@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 
 import BlockingQueue.Consumer;
 import BlockingQueue.Deliverer;
 import BlockingQueue.SafeConsumer;
 import BlockingQueue.SafeDeliverer;
+import CyclicBarrier.CycThread;
 import Semaphore.SemaThread;
 
 public class Main {
@@ -39,6 +41,16 @@ public class Main {
 		}
 		
 		clear();
+	
+		//CyclicBarrier Code
+		System.out.println("\n\n-----CyclicBarrier-----\n");
+		CyclicBarrier cb = new CyclicBarrier(5);
+		for(int i = 0; i<10;i++) {
+			new CycThread(cb).start();
+		}
+		
+		clear();
+		
 		
 	}
 	
